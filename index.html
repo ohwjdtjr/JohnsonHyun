@@ -28,7 +28,9 @@ const lines=[
 '존승현이라는 이름, 리듬감은 있는데 마지막 글자가 앙코르를 기다리는 것 같네.',
 '존승현? 세 글자가 모였는데도 어쩐지 이름표 하나 더 필요한 분위기야.',
 '존승현, 이름의 존재감이 커서 글자들이 서로 자리 양보를 안 하네.',
-'이름이 존승현이면 출석 부를 때 글자마다 대답할 차례를 기다릴 듯.'
+'이름이 존승현이면 출석 부를 때 글자마다 대답할 차례를 기다릴 듯.',
+'존승현 vs 이현우 하면 무조건 발림. 존승현이 사이보그여도 못이김.',
+'존승현이랑 사이보그랑 뜨면 무조건 패배한다. 민수가 도와줘야 비빔.'
 ];
 let previous=-1;
 document.querySelector('#next').addEventListener('click',()=>{let index;do{index=Math.floor(Math.random()*lines.length)}while(index===previous);previous=index;document.querySelector('#result').textContent=lines[index]});
