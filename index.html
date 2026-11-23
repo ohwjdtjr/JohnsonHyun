@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>존승현 오늘의 한마디</title>
+<style>
+:root{color-scheme:light dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(145deg,#f2ecff,#e7f7ff);color:#202033;padding:24px}.card{width:min(100%,560px);background:#ffffffeb;border:1px solid #fff;border-radius:24px;padding:clamp(24px,6vw,42px);box-shadow:0 20px 60px #33276620;text-align:center}h1{font-size:clamp(1.7rem,5vw,2.25rem);margin:0 0 10px}.intro{color:#5b5a70;line-height:1.6;margin:0 0 24px}.name{font-size:1.1rem;font-weight:800;letter-spacing:.08em;color:#6546d7;background:#f1edff;border-radius:999px;padding:9px 18px;display:inline-block}.result{min-height:100px;display:grid;place-items:center;margin-top:20px;padding:20px;border-radius:16px;background:#f1edff;line-height:1.7;font-size:1.2rem;overflow-wrap:anywhere}button{margin-top:16px;width:100%;border:0;border-radius:12px;padding:14px 18px;background:#6546d7;color:white;font:inherit;font-weight:700;cursor:pointer}button:hover{background:#5135bd}button:focus-visible{outline:3px solid #aa96ff;outline-offset:2px}.note{font-size:.86rem;color:#77758a;margin:18px 0 0}@media(prefers-color-scheme:dark){body{background:linear-gradient(145deg,#191329,#10202a);color:#f4f1ff}.card{background:#252238;border-color:#39344f}.intro,.note{color:#c3bfd4}.name,.result{background:#312b49}.name{color:#c0adff}}
+</style>
+</head>
+<body>
+<main class="card">
+<h1>오늘의 라이벌 한마디</h1>
+<p class="intro">버튼을 누르면 존승현의 이름을 소재로 한 가벼운 농담이 나와요.</p>
+<div class="name" aria-label="고정된 이름">존승현</div>
+<div id="result" class="result" role="status" aria-live="polite">오늘은 어떤 한마디가 나올까요?</div>
+<button id="next" type="button">다른 문장 보기</button>
+<p class="note">이름의 소리와 글자에 관한 가벼운 말장난이에요. 서로 웃고 넘길 수 있을 때만 사용하세요.</p>
+</main>
+<script>
+const lines=[
+'존승현? 이름 석 자가 등장했는데 글자들이 아직 입장 순서를 정하는 중이야.',
+'“존승현”이라고 부르면 이름도 잠깐 멈춰서 자기소개를 다시 생각할 것 같아.',
+'존승현, 발음은 또렷한데 이름 속 글자들은 단체로 회의 중인 느낌이야.',
+'이름이 존승현이라니, 글자 세 명이 한 팀인데 작전 회의가 꽤 길겠어.',
+'존승현! 이름을 부르는 순간 주변 공기가 “오늘의 주인공 입장” 하고 알림을 띄울 것 같아.',
+'“존승현”은 이름만으로도 글자들이 서로 마이크를 넘기느라 바빠 보여.',
+'존승현이라는 이름, 리듬감은 있는데 마지막 글자가 앙코르를 기다리는 것 같네.',
+'존승현? 세 글자가 모였는데도 어쩐지 이름표 하나 더 필요한 분위기야.',
+'존승현, 이름의 존재감이 커서 글자들이 서로 자리 양보를 안 하네.',
+'이름이 존승현이면 출석 부를 때 글자마다 대답할 차례를 기다릴 듯.'
+];
+let previous=-1;
+document.querySelector('#next').addEventListener('click',()=>{let index;do{index=Math.floor(Math.random()*lines.length)}while(index===previous);previous=index;document.querySelector('#result').textContent=lines[index]});
+</script>
+</body>
+</html>
